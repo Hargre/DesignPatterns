@@ -6,7 +6,23 @@ namespace AbstractFactory
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
+            WidgetFactory factory;
+            Button button;
+            EditText editText;
+
+            factory = new MaterialWidgetFactory();
+            button = factory.createButton();
+            editText = factory.createEditText();
+
+            button.showButton();
+            editText.showEditText();
+
+            factory = new FlatWidgetFactory();
+            button = factory.createButton();
+            editText = factory.createEditText();
+
+            button.showButton();
+            editText.showEditText();
         }
     }
 }
